@@ -1,16 +1,8 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
-  },
-
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
   },
 
   {
@@ -105,24 +97,6 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require "lspconfig"
-
-      -- Example: Set up tsserver for JavaScript/TypeScript
-      lspconfig.ts_ls.setup {
-        on_attach = function(client)
-          client.server_capabilities.document_formatting = true
-        end,
-      }
-
-      -- You can add more LSP server setups here if needed
-      -- Set up gopls for Go
-      lspconfig.gopls.setup {
-        on_attach = function(client)
-          client.server_capabilities.document_formatting = true
-        end,
-      }
-    end,
   },
 
   -- Neovim Session Manager
